@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:practice5/info/customTxField.dart';
+import 'package:practice5/info/infoBar.dart';
 
 void main() {
   runApp(Practice5());
@@ -37,71 +39,31 @@ class _HomePageState extends State<HomePage> {
             ),
 
             Center(
-              child: Text('Please Register Goshujin-Sama'),
+              child: InfoBar(content: 'Please Register Goshujin-sama', colorBackground: Colors.deepOrange,),
             ),
 
             Container(
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Name',
-                  hintText: 'What\'s your name?',
-                ),
-              ),
-              margin: EdgeInsets.all(10),
+              child: CustomTextField(hintTxt: 'What\'s your Name?', label: 'Name')
             ),
 
             Container(
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Birthday',
-                  hintText: 'When is YOUR Birthday?',
-                ),
-                keyboardType: TextInputType.datetime,
-              ),
-              margin: EdgeInsets.all(10),
+              child: CustomTextField(hintTxt: 'When is your birthday?', label: 'Birthday', keyboardTypeC: TextInputType.datetime,)
             ),
 
             Container(
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Phone number',
-                  hintText: 'What\'s your number?',
-                ),
-                keyboardType: TextInputType.number,
-              ),
-              margin: EdgeInsets.all(10),
+              child: CustomTextField(hintTxt: 'What\'s your number?', label: 'Phone Number', keyboardTypeC: TextInputType.phone,)
             ),
 
             Container(
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'E-Mail',
-                  hintText: 'What\'s your E-Mail?',
-                ),
-                keyboardType: TextInputType.emailAddress,
-              ),
-              margin: EdgeInsets.all(10),
+              child: CustomTextField(hintTxt: 'What\'s your Email?', label: 'E-Mail', keyboardTypeC: TextInputType.emailAddress,)
             ),
 
             Container(
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Username',
-                  hintText: 'What\'d you like to be called?',
-                ),
-              ),
-              margin: EdgeInsets.all(10),
+              child: CustomTextField(hintTxt: 'What\'d you like to be called?', label: 'Usename',)
             ),
 
             Container(
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  hintText: 'DON\'T TELL THIS TO ANYONE!',
-                ),
-                obscureText: true,
-              ),
-              margin: EdgeInsets.all(10),
+              child: CustomTextField(hintTxt: 'DON\'T TELL THIS TO ANYONE', label: 'Password', passyes: true,)
             ),
 
             SizedBox(height: 20,),
