@@ -13,6 +13,30 @@ class Practice5 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomePage(),
+      theme: ThemeData(
+        primaryColor: Colors.purple,
+        accentColor: Colors.purpleAccent,
+
+        appBarTheme: AppBarTheme(
+          color: Colors.purple,
+          elevation: 6,
+          brightness: Brightness.dark,
+        ),
+
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.purpleAccent,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+        ),
+        brightness: Brightness.light
+      ),
+
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.purpleAccent,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+        ),
+      )
     );
   }
 }
@@ -27,8 +51,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Practice 5 App'),
-        backgroundColor: Colors.deepOrange,
+        title: Text('Practice 5 App',style: TextStyle(fontFamily: "quickkiss"),),
+        titleSpacing: 15,
+
+        //backgroundColor: Colors.deepOrange,
       ),
 
       body: new SingleChildScrollView(
@@ -39,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             Center(
-              child: InfoBar(content: 'Please Register Goshujin-sama', colorBackground: Colors.deepOrange,),
+              child: InfoBar(content: 'Please Register Goshujin-sama', colorBackground: Colors.purpleAccent,),
             ),
 
             Container(
@@ -72,7 +98,7 @@ class _HomePageState extends State<HomePage> {
               child : RaisedButton(
                 onPressed: (){},
                 child: Text('Submitt'),
-                color: Colors.deepOrange,
+                //color: Colors.deepOrange,
               )
             )
         ],
